@@ -1,0 +1,6 @@
+notebook
+ipython
+matplotlib
+numpy
+pandas
+tensorflow
