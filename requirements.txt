@@ -4,6 +4,8 @@ matplotlib
 numpy
 pandas
 tensorflow
+torch
+torchvision
 pydot
 pydotplus
 scikit-learn
