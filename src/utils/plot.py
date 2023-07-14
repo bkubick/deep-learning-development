@@ -38,17 +38,29 @@ def plot_true_versus_predicted(y_true: Array, y_predict: Array, figsize: Optiona
     plt.show()
 
     
-def plot_history(history: tf.keras.callbacks.History):
+def plot_history(history: tf.keras.callbacks.History, metric: Optional[str] = None):
     """ Plots the loss versus the epochs.
     
         Args:
             history (tf.keras.callbacks.History): The history object returned by the fit method.
+            metric (Optional[str]): The metric to plot.
     """
-    pd.DataFrame(history.history).plot()
-    plt.ylabel('Metrics')
-    plt.xlabel('Epochs')
-    plt.title('Metrics vs. Epochs')
-    plt.show()
+    history_df = pd.DataFrame(history.history)
+    if metric:
+        metrics = [metric]
+        val_metric = f'val_{metric}'
+        if val_metric in history_df.columns.to_list():
+            metrics.append(val_metric)
+        history_df.loc[:, metrics].plot()
+        plt.ylabel(metric.capitalize())
+        plt.xlabel('Epochs')
+        plt.title(f'{metric.capitalize()} vs. Epochs')
+    else:
+        history_df.plot()
+        plt.ylabel('Metrics')
+        plt.xlabel('Epochs')
+        plt.title('Metrics vs. Epochs')
+        plt.show()
 
 
 def plot_learning_rate_versus_loss(learning_rates: List[float], losses: List[float]):
