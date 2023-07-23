@@ -3,7 +3,9 @@ ipython
 matplotlib
 numpy
 pandas
+tensorboard
 tensorflow
+tensorflow-hub
 torch
 torchvision
 pydot
