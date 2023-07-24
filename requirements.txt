@@ -6,6 +6,7 @@ pandas
 tensorboard
 tensorflow
 tensorflow-hub
+tensorflow-metal
 torch
 torchvision
 pydot
