@@ -2,6 +2,7 @@
 ###################
 Data/
 logs/
+checkpoints/
 
 # Virtual Environment #
 ###################
