@@ -38,14 +38,20 @@ def plot_true_versus_predicted(y_true: Array, y_predict: Array, figsize: Optiona
     plt.show()
 
     
-def plot_history(history: tf.keras.callbacks.History, metric: Optional[str] = None):
+def plot_history(history: Union[tf.keras.callbacks.History, dict, pd.DataFrame], metric: Optional[str] = None):
     """ Plots the loss versus the epochs.
     
         Args:
             history (tf.keras.callbacks.History): The history object returned by the fit method.
             metric (Optional[str]): The metric to plot.
     """
-    history_df = pd.DataFrame(history.history)
+    if isinstance(history, tf.keras.callbacks.History):
+        history_df = pd.DataFrame(history.history)
+    elif isinstance(history, dict):
+        history_df = pd.DataFrame(history)
+    else:
+        history_df = history
+
     if metric:
         metrics = [metric]
         val_metric = f'val_{metric}'
@@ -87,7 +93,8 @@ def plot_confusion_matrix(y_true: Array,
                           label_text_size: int = 20,
                           cell_text_size: int = 10,
                           classes: Optional[List[str]] = None,
-                          figsize: Optional[Tuple[int, int]] = (15, 15)):
+                          figsize: Optional[Tuple[int, int]] = (15, 15),
+                          norm: bool = False):
     """ Plots a confusion matrix using Seaborn's heatmap. 
     
         Args:
@@ -97,11 +104,12 @@ def plot_confusion_matrix(y_true: Array,
             cell_text_size (int): The size of the text in each cell.
             classes (Optional[List[str]]): The class labels of each category.
             figsize (Optional[Tuple[int, int]]): The size of the figure.
+            norm (bool): Whether to display the normalized cells.
     """
     # Create the confusion matrix
     cm = confusion_matrix(y_true, tf.round(y_pred))
 
-    cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]  # Normalize our confusion matrix
+    cm_norm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]  # Normalize our confusion matrix
     n_classes = cm.shape[0]
 
     # Prettifying it
@@ -130,15 +138,28 @@ def plot_confusion_matrix(y_true: Array,
     ax.xaxis.label.set_size(label_text_size)
     ax.title.set_size(label_text_size)
 
+    # Make x labels appear on bottom
+    ax.xaxis.set_label_position('bottom')
+    ax.xaxis.tick_bottom()
+
+    # Make x labels mostly vertical
+    plt.xticks(rotation=70, ha='center')
+
     # Set the threshold
     threshold = (cm.max() + cm.min()) / 2
 
     # Plot the text on each cell
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-        plt.text(j, i, f'{cm[i, j]} ({cm[i, j]:.1f}%)',
-                 horizontalalignment='center',
-                 color='white' if cm[i,j] > threshold else 'black',
-                 size=cell_text_size)
+        if norm:
+            plt.text(j, i, f'{cm[i, j]} ({cm_norm[i, j]*100:.1f}%)',
+                    horizontalalignment='center',
+                    color='white' if cm[i, j] > threshold else 'black',
+                    size=cell_text_size)
+        else:
+            plt.text(j, i, f'{cm[i, j]}',
+                    horizontalalignment='center',
+                    color='white' if cm[i, j] > threshold else 'black',
+                    size=cell_text_size)
     
     fig.show()
 
