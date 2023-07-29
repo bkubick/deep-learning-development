@@ -13,7 +13,6 @@ def summarize_image_directory(data_directory: pathlib.Path):
             data_directory: The directory containing the data.
     """
     # Lets look at the number of files in the test and train sets
-    # TODO: Move this to a nice function
     for dirpath, dirnames, filenames in os.walk(data_directory):
         images = [file for file in filenames if file.endswith('jpg') or file.endswith('jpeg') or file.endswith('png')]
         if images:
@@ -55,6 +54,16 @@ def create_tensorboard_callback(dir_name: str, experiment_name: str) -> tf.keras
 
 
 def load_and_prep_image(filename: str, image_size: int = 224, scale: bool = True) -> tf.Tensor:
+    """ Loads and prepares an image for the model.
+    
+        Args:
+            filename: The filename of the image.
+            image_size: The size of the image.
+            scale: Whether to scale the image or not.
+
+        Returns:
+            The prepped image.
+    """
     # Read in the image
     image = tf.io.read_file(filename)
     image = tf.io.decode_image(image, channels=3)
