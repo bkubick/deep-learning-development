@@ -85,6 +85,47 @@ def plot_learning_rate_versus_loss(learning_rates: List[float], losses: List[flo
     plt.show()
 
 
+def compare_histories(original_history: Union[pd.DataFrame, tf.keras.callbacks.History],
+                      new_history: Union[pd.DataFrame, tf.keras.callbacks.History],
+                      initial_epoch: int):
+    """ Compares the history of two models.
+    
+        Args:
+            original_history (Union[pd.DataFrame, tf.keras.callbacks.History]): The history of the original model.
+            new_history (Union[pd.DataFrame, tf.keras.callbacks.History]): The history of the new model.
+            initial_epoch (int): The epoch at which the new model started training at.
+    """
+    if isinstance(original_history, pd.DataFrame) and isinstance(new_history, pd.DataFrame):
+        original_history_df = original_history
+        new_history_df = new_history
+    else:
+        original_history_df = pd.DataFrame(original_history.history)
+        new_history_df = pd.DataFrame(new_history.history)
+
+    total_acc = pd.concat([original_history_df['accuracy'], new_history_df['accuracy']])
+    total_loss = pd.concat([original_history_df['loss'], new_history_df['loss']])
+    total_val_acc = pd.concat([original_history_df['val_accuracy'], new_history_df['val_accuracy']])
+    total_val_loss = pd.concat([original_history_df['val_loss'], new_history_df['val_loss']])
+    
+    # Loss Plots
+    plt.figure(figsize=(8,8))
+    plt.subplot(2, 1, 1)
+    plt.plot(total_loss, label='Training Loss')
+    plt.plot(total_val_loss, label='Validation Loss')
+    plt.plot([initial_epoch-1, initial_epoch-1], plt.ylim(), label='Start Fine Tuning')
+    plt.legend(loc='upper right')
+    plt.title('Training and Validation Loss')
+
+    # Accuracy Plots
+    plt.figure(figsize=(8,8))
+    plt.subplot(2, 1, 1)
+    plt.plot(total_acc, label='Training Accuracy')
+    plt.plot(total_val_acc, label='Validation Accuracy')
+    plt.plot([initial_epoch-1, initial_epoch-1], plt.ylim(), label='Start Fine Tuning')
+    plt.legend(loc='lower right')
+    plt.title('Training and Validation Accuracy')
+
+
 # ============================== CONFUSION MATRIX PLOTTING ==============================
 
 
