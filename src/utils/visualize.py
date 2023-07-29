@@ -1,5 +1,4 @@
 import tensorflow as tf
-from tensorflow.keras.utils import plot_model
 
 
 def visualize_model(model: tf.keras.Model):
@@ -10,4 +9,4 @@ def visualize_model(model: tf.keras.Model):
         Args:
             model: The model to visualize.
     """
-    return plot_model(model, show_shapes=True, show_layer_names=True)
+    return tf.keras.utils.plot_model(model, show_shapes=True, show_layer_names=True)

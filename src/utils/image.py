@@ -35,24 +35,6 @@ def get_classnames_from_directory(data_directory: pathlib.Path) -> np.ndarray:
     return class_names
 
 
-def create_tensorboard_callback(dir_name: str, experiment_name: str) -> tf.keras.callbacks.TensorBoard:
-    """ Creates a TensorBoard callback.
-    
-        Args:
-            dir_name: The directory name.
-            experiment_name: The experiment name.
-
-        Returns:
-            The TensorBoard callback.
-    """
-    log_dir = f"{dir_name}/{experiment_name}/{dt.datetime.now().strftime('%Y%m%d-%H%M%S')}"
-    
-    tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir)
-    print('Saving TensorBoard log files to: ', log_dir)
-    
-    return tensorboard_callback
-
-
 def load_and_prep_image(filename: str, image_size: int = 224, scale: bool = True) -> tf.Tensor:
     """ Loads and prepares an image for the model.
     
