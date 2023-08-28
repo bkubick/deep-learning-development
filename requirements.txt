@@ -11,4 +11,5 @@ torch
 torchvision
 pydot
 pydotplus
+py-learning-toolbox@git+https://github.com/bkubick/py-learning-toolbox.git
 scikit-learn
