@@ -1,11 +1,20 @@
 # Deep Learning Development Excercises & Projects
 
 ## Description
-This repo consists of exercises and projects in Deep Learning to be a home for my work as I prepare to take the TensorFlow Certified Developer Exam.
+This repo is a home for exercises and projects in Deep Learning as I prepare to take the TensorFlow Certified Developer Exam. This includes exercises and projects associated with the following online Courses.
 
-This includes exercises and projects associated with the following online Courses.
 - [Tensorflow Developer Certificate in 2023: Zero to Mastery](https://www.udemy.com/course/tensorflow-developer-certificate-machine-learning-zero-to-mastery/)
 - [The Complete Neural Networks Bootcamp: Theory, Applications](https://www.udemy.com/course/the-complete-neural-networks-bootcamp-theory-applications/)
+
+Overall, the primary purpose of this repo is to build out my skill set in deep learning above and beyond what is required of the TensorFlow Developer exam. The purpose of me taking the exam is to showcase my knowledge in deep learning through a reputable source.
+
+## Tech Stack
+<img style="padding-right:20px;" alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=whitee"/>
+<img style="padding-right:20px;" alt="Jupyter Notebook" src="https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white"/>
+<img style="padding-right:20px;" alt="Pandas" src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white"/>
+<img style="padding-right:20px;" alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)"/>
+<img style="padding-right:20px;" alt="Numpy" src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white"/>
+
 
 ## Exercises
 The main purpose of this notebook is to house my work as I learn about deep learning and TensorFlow. This includes notebooks dedicated to learning specific areas of study in Deep learning. The list below summarizes the various excerices done during this process.
