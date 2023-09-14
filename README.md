@@ -9,6 +9,7 @@ This repo is a home for exercises and projects in Deep Learning as I prepare to 
 Overall, the primary purpose of this repo is to build out my skill set in deep learning above and beyond what is required of the TensorFlow Developer exam. The purpose of me taking the exam is to showcase my knowledge in deep learning through a reputable source.
 
 ## Tech Stack
+<img style="padding-right:20px;" align=left alt="TensorFlow" src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"/>
 <img style="padding-right:20px;" align=left alt="TensorFlow" src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=whitee"/>
 <img style="padding-right:20px;" align=left alt="Jupyter Notebook" src="https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white"/>
 <img style="padding-right:20px;" align=left alt="Pandas" src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white"/>
