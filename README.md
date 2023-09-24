@@ -47,7 +47,7 @@ A major part of fully understanding Deep Learning is putting it to real-world pr
 ## Additional Work
 This is an ongoing repository for the prepartion of the TensorFlow Exam.
 
-**NOTE** The `src` directory is being fully depricated in favor of my other repository, [py-learning-toolbox](https://github.com/bkubick/py-learning-toolbox), which will be the home for all of my reusable utilities for deep learning projects.
+**NOTE** The `src` directory has been fully depricated in favor of my other repository, [py-learning-toolbox](https://github.com/bkubick/py-learning-toolbox), which will be the home for all of my reusable utilities for deep learning projects.
 
 1. Create a notebook dedicated to the TensorFlow exam and include notes.
 2. Add additional experiments to the `Food Vision` project.
