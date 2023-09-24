@@ -37,7 +37,8 @@ A major part of fully understanding Deep Learning is putting it to real-world pr
    * Deep learning project to understand regression problems using Neural Networks through predicting the price of medical insurance from a dataset on personal information.
 2. Clothing Image Classification
     * Deep learning project to understand classification problems using Neural Networks by classifying images as types of clothing (Note that this is not a CNN notebook).
-3. Food Classification Notebook to be Added Soon!
+3. Food Vision
+    * Project dedicated to learning Convultional Neural Networks through the analysis of the Food-101 dataset.
 4. Skim Lit
     * Project dedicated to learning Recurrent Neural Networks through the analysis of medical research abstracts and classifying the segment as what the section describes.
 5. Bit Predict
@@ -48,7 +49,9 @@ This is an ongoing repository for the prepartion of the TensorFlow Exam.
 
 **NOTE** The `src` directory is being fully depricated in favor of my other repository, [py-learning-toolbox](https://github.com/bkubick/py-learning-toolbox), which will be the home for all of my reusable utilities for deep learning projects.
 
-1. Cleanup all excercise notebooks to ensure they are all organized and go into detail regarding each section.
-2. Fully deprecate the `src` folder per my note above.
-3. Move my Food classifier notebook from Google Colab to this repository.
-4. Create a notebook dedicated to the TensorFlow exam and include notes.
+1. Create a notebook dedicated to the TensorFlow exam and include notes.
+2. Add additional experiments to the `Food Vision` project.
+3. Dive deeper into customization, such as custom models, layers, loss functions, etc.
+4. Create another timeseries project in conjunction with my `algorithmic-trading` repo, to attempt to predict stock prices for certain companies.
+5. Create another large-language project.
+6. Create another Feed-forward project to predict real estate prices.
