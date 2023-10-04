@@ -44,6 +44,8 @@ A major part of fully understanding Deep Learning is putting it to real-world pr
     * Project dedicated to learning Recurrent Neural Networks through the analysis of medical research abstracts and classifying the segment as what the section describes.
 5. Bit Predict
     * Project dedicated to learning and modeling timeseries datasets, through using historical Bit Coin prices to predict the price of bit coin.
+6. Poetry Generator
+    * Deep dive into text generation through the analysis of various artists and writers to generate poems.
 
 ## Additional Work
 This is an ongoing repository for the prepartion of the TensorFlow Exam.
