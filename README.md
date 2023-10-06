@@ -50,6 +50,9 @@ A major part of fully understanding Deep Learning is putting it to real-world pr
     * Computer vision project on the popular, mnist, dataset, where I built out various models to predict hand written digits.
 8. Occupancy Detector
     * Multivariate Time Series, binary classification project to use sensor data to predict whether a room is occupied or not.
+9. Global Temperature Predictor
+    * Univariate Time Series analysis for a regression project to predict the following years annual global mean temperature based off a window of previous years annual 
+    global mean temperatures.
 
 ## Additional Work
 This is an ongoing repository for the prepartion of the TensorFlow Exam.
