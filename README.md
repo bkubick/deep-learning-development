@@ -48,6 +48,8 @@ A major part of fully understanding Deep Learning is putting it to real-world pr
     * Deep dive into text generation through the analysis of various artists and writers to generate poems.
 7. MNIST Digit Predictor
     * Computer vision project on the popular, mnist, dataset, where I built out various models to predict hand written digits.
+8. Occupancy Detector
+    * Multivariate Time Series, binary classification project to use sensor data to predict whether a room is occupied or not.
 
 ## Additional Work
 This is an ongoing repository for the prepartion of the TensorFlow Exam.
