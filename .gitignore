@@ -8,6 +8,7 @@ checkpoints/
 ###################
 env/
 .env
+.idea
 
 # Jupyter Noebooks #
 ###################
